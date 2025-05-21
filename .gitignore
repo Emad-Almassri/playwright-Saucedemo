@@ -1,0 +1,31 @@
+# Node modules
+node_modules/
+
+# Playwright test results
+
+
+# Logs
+logs/
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+
+
+# IDE files
+.vscode/
+.idea/
+
+# Coverage reports (if using coverage tools)
+coverage/
+
+# Compiled TypeScript (if you're using tsc separately)
+dist/
+out/
+
+# Optional: macOS / Windows junk
+*.DS_Store
+ehthumbs.db
+Icon?
