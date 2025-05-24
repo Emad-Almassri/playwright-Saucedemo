@@ -18,7 +18,7 @@ test.describe('Checkout Process', () => {
     await cart.checkout();
 
     const checkout = new CheckoutPage(page);
-    await checkout.fillInformation('John', 'Doe', '12345');
+    await checkout.fillInformation('Abdullah', 'Othman', 'P400');
     await checkout.finish();
 
     await expect(page.locator('.complete-header')).toHaveText('Thank you for your order!');

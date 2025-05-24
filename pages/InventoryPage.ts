@@ -28,4 +28,14 @@ export class InventoryPage {
   async getFirstItemPrice() {
     return this.page.locator('.inventory_item_price').first().innerText();
   }
+
+  async getAllItemNames(): Promise<string[]> {
+    const items = await this.page.locator('.inventory_item_name').allTextContents();
+    return items.map(name => name.trim());
+  }
+
+  async getAllItemPrices(): Promise<string[]> {
+    const priceElements = await this.page.locator('.inventory_item_price').allTextContents();
+    return priceElements.map(price => price.trim()); 
+  }
 }

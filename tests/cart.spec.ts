@@ -16,6 +16,13 @@ test.describe('Cart Operations', () => {
     await expect(inventory.getCartBadge()).resolves.toContain('1');
   });
 
+  test('Add multiple items to cart', async ({ page }) => {
+    const inventory = new InventoryPage(page);
+    await inventory.addItemToCart('Sauce Labs Backpack');
+    await inventory.addItemToCart('Sauce Labs Bike Light');
+    await expect(inventory.getCartBadge()).resolves.toContain('2');
+  });
+
   test('Remove item from cart', async ({ page }) => {
     const inventory = new InventoryPage(page);
     await inventory.addItemToCart('Sauce Labs Backpack');
@@ -24,4 +31,5 @@ test.describe('Cart Operations', () => {
     await cart.removeItem('Sauce Labs Backpack');
     await expect(cart.isCartEmpty()).resolves.toBeTruthy();
   });
+
 });
